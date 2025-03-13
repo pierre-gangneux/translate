@@ -27,10 +27,16 @@ async function get_text(id_video) {
         text_witout_timer = get_text_witout_timer(text)
         p = document.querySelector("#text")
         p.textContent = text_witout_timer
+
+        // montre le haut du text
+        let container = document.querySelector("#div_text")
+        container.scrollTop = 0
     })
+    
     
 
 }
+
 
 
 
@@ -43,6 +49,9 @@ btn.addEventListener("click", () => {
 
 
 
+
+
+// code inutilliser
 
 async function get_text23(id_video) {
     fetch(`http://127.0.0.1:5000/text/${id_video}`)
