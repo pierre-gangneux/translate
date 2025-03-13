@@ -31,12 +31,28 @@ async function get_text(id_video) {
         // montre le haut du text
         let container = document.querySelector("#div_text")
         container.scrollTop = 0
+        return container
+        
     })
-    
-    
-
+    .then( container => {
+        setTimeout(1000)
+        console.log(container.scrollTop)
+        scroll_down(container, 1, 200)
+    })
 }
 
+async function scroll_down(container, distance, millisecondes) {
+    // On s'assure que la hauteur est bien mise à jour avant de commencer
+    while (container.scrollTop < container.scrollHeight) {
+        console.log("Défilement actuel: ", container.scrollTop);
+
+        // Augmente le scroll
+        container.scrollTop += distance;
+
+        // Attendre avant de faire défiler à nouveau
+        await new Promise(resolve => setTimeout(resolve, millisecondes));
+    }
+}
 
 
 
