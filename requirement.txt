@@ -1,0 +1,10 @@
+yt-dlp
+Flask
+python-dotenv
+SpeechRecognition
+pydub
+soundfile
+librosa
+openai-whisper
+moviepy
+flask_restx
