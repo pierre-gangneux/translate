@@ -36,6 +36,7 @@ async function get_text(id_video) {
 
 let btn = document.querySelector("#download");
 btn.addEventListener("click", () => {
+    id_video = document.querySelector("#input_id")
     get_text("1HbF0UpHYzQ&t=2s")
     console.log("finish")
 });
